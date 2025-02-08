@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>广告</title>
+    <script src="https://sf1-ttcdn-tos.pstatp.com/obj/ad-toutiao/public/sdk/TTAds.js"></script>
+</head>
+<body>
+<div id="ad-container"></div>
+
+<script>
+    (function() {
+        var ad = new TTAds.RewardVideoAd({
+            adUnitId: "963839984",  // 填写穿山甲广告ID
+            container: "ad-container",
+        });
+
+        ad.show().catch(err => console.error("广告加载失败", err));
+    })();
+</script>
+</body>
+</html>

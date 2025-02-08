@@ -3,21 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>广告</title>
-    <script src="https://sf1-ttcdn-tos.pstatp.com/obj/ad-toutiao/public/sdk/TTAds.js"></script>
+    <title>穿山甲广告</title>
 </head>
 <body>
-<div id="ad-container"></div>
+    <h2>广告加载中...</h2>
+    <div id="csj-ad"></div> <!-- 这里是广告容器 -->
 
-<script>
-    (function() {
-        var ad = new TTAds.RewardVideoAd({
-            adUnitId: "963839984",  // 填写穿山甲广告ID
-            container: "ad-container",
-        });
+    <!-- 确保 SDK 正确加载 -->
+    <script src="https://sf3-fe-tos.pglstatp-toutiao.com/obj/ad-pattern-sdk/latest/web-sdk.js"></script>
 
-        ad.show().catch(err => console.error("广告加载失败", err));
-    })();
-</script>
+    <script>
+        window.onload = function () {
+            if (typeof TTAds === "undefined") {
+                console.error("穿山甲 SDK 加载失败！");
+                return;
+            }
+
+            const adSlotId = "963839984"; // 替换为你的穿山甲广告位 ID
+
+            TTAds.createBannerAd({
+                slotId: adSlotId,
+                containerId: "csj-ad",
+                width: 300,
+                height: 250
+            }).then(ad => {
+                ad.show();
+            }).catch(error => {
+                console.error("广告加载失败", error);
+            });
+        };
+    </script>
 </body>
 </html>

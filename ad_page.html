@@ -3,35 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>穿山甲广告</title>
+    <title>广告页面</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <h2>广告加载中...</h2>
-    <div id="csj-ad"></div> <!-- 这里是广告容器 -->
-
-    <!-- 确保 SDK 正确加载 -->
-    <script src="https://sf3-fe-tos.pglstatp-toutiao.com/obj/ad-pattern-sdk/latest/web-sdk.js"></script>
-
+    <h2>广告页面</h2>
+    
+    <!-- Google AdSense 广告示例 -->
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-xxxxxxxxxxxxxxxx"
+        data-ad-slot="yyyyyyyyyy"
+        data-ad-format="auto"></ins>
     <script>
-        window.onload = function () {
-            if (typeof TTAds === "undefined") {
-                console.error("穿山甲 SDK 加载失败！");
-                return;
-            }
-
-            const adSlotId = "963844215"; // 替换为你的穿山甲广告位 ID
-
-            TTAds.createBannerAd({
-                slotId: adSlotId,
-                containerId: "csj-ad",
-                width: 300,
-                height: 250
-            }).then(ad => {
-                ad.show();
-            }).catch(error => {
-                console.error("广告加载失败", error);
-            });
-        };
+        (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 </body>
 </html>
